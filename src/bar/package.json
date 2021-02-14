@@ -1,0 +1,22 @@
+{
+  "name": "bar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha --require @babel/register",
+    "start": "node start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/preset-env": "^7.5.4",
+    "@babel/register": "^7.12.13",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13"
+  }
+}
