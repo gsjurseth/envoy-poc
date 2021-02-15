@@ -25,6 +25,10 @@ https://cloud.google.com/apigee/docs/api-platform/envoy-adapter/v1.4.x/concepts
 
 I'd recommend to follow those instructions for the latest veresion. 
 
+**ALSO** You'll want to make sure you set `request-authentication.yaml` to use
+the `myservices` namespace as opposed to default or it jwt authentcation will
+fail to work.
+
 NB: JWT
 These examples are really meant to show how advanced cases with JWTs can work 
 and to that end you'll need to run through these pieces as well in order
