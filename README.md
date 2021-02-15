@@ -18,6 +18,20 @@ namespace called `myservices`. Like so:
 kubectl create namespace myservices
 ```
 
+## Getting the apigee adapter setup
+Excellent documentation is already provided here:
+
+https://cloud.google.com/apigee/docs/api-platform/envoy-adapter/v1.4.x/concepts
+
+I'd recommend to follow those instructions for the latest veresion. 
+
+NB: JWT
+These examples are really meant to show how advanced cases with JWTs can work 
+and to that end you'll need to run through these pieces as well in order
+to ensure this is working and configured as well.
+
+https://cloud.google.com/apigee/docs/api-platform/envoy-adapter/v1.4.x/operation#using-jwt-based-authentication
+
 ## The docker images
 I've provided a makefile here which should do the following automatically:
 * build the images
