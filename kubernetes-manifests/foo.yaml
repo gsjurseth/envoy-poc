@@ -32,7 +32,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: eu.gcr.io/geirs-purdy-project/foo:2
+        image: eu.gcr.io/geirs-purdy-project/apigee-foo:latest
         ports:
         - containerPort: 3000
         readinessProbe:
@@ -49,7 +49,7 @@ spec:
             - "netstat -anp | fgrep 3000"
         env:
           - name: BAR_HOST
-            value: bar:3000
+            value: barservice:3000
           - name: DEBUG
             value: "true"
         resources:

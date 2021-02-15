@@ -27,7 +27,10 @@ app.get('/passauth', (req, res) => {
     headers: {'Authorization': req.headers.authorization}
   })
   .then( r => r.json() )
-  .then( r => res.json(r) );
+  .then( r => res.json(r) )
+  .catch( e => {
+    res.status(500).json({ "msg": e.toString(), "code": 500 } );
+  });
 });
 
 app.get('/nopassauth', (req, res) => {
@@ -36,7 +39,10 @@ app.get('/nopassauth', (req, res) => {
   }
   fetch(`http://${bar_host}/`)
   .then( r => r.json() )
-  .then( r => res.json(r) );
+  .then( r => res.json(r) )
+  .catch( e => {
+    res.status(500).json({ "msg": e.toString(), "code": 500 } );
+  });
 });
 
 app.listen(port, () =>
