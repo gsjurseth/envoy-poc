@@ -11,6 +11,24 @@ Basically we gotta get this all setup so that we can run this simple POC
 Presumably you'll be running this on GKE, but you'll need a K8S instance 
 somewhere running at least version 1.6 as everything in here relies on it.
 
+You can spin up a cluster like so (You can even do it including istio in one fell swoop):
+```bash
+gcloud container clusters create example-cluster --region eu-west1
+```
+
+That looks like so:
+```bash
+gcloud beta container clusters create CLUSTER_NAME \
+    --addons=Istio --istio-config=auth=MTLS_PERMISSIVE \
+    --cluster-version=CLUSTER_VERSION \
+    --machine-type=n1-standard-2 \
+    --num-nodes=4
+```
+
+Info from istioldie here:
+
+https://istio.io/v1.6/docs/setup/platform-setup/gke/
+
 Once istio is installed and configured we're going to need to create a
 namespace called `myservices`. Like so:
 
