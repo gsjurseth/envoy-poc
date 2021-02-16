@@ -24,7 +24,10 @@ app.get('/passauth', (req, res) => {
     console.log("The authorization header: %s", req.headers.authorization);
   }
   fetch(`http://${bar_host}/`, {
-    headers: {'Authorization': req.headers.authorization}
+    headers: {
+      'Authorization': req.headers.authorization,
+      'X-header-blah': "I-like-traffic-lights"
+    }
   })
   .then( r => r.json() )
   .then( r => res.json(r) )

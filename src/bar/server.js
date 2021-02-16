@@ -11,7 +11,7 @@ app.options('/', cors());
 app.use(express.json());
 app.get('/', (req, res) => {
   if (debug === "true") {
-    console.log("this is the incoming header: %s", req.headers.authorization);
+    console.log("these are the headers: %j", req.headers);
   }
   res.json({ "msg": "this is some serious bar", "code": 200 })
 });
